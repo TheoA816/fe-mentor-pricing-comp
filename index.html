@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive pricing component</title>
+
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <header>
+    <img src="images/pattern-circles.svg">
+    <h1>Simple, traffic-based pricing</h1>
+    <p>Sign-up for our 30-day trial. No credit card required.</p>
+  </header>
+
+  <div class="card">
+
+    <div class="inner-card">
+      <div class="content">
+        <span class="pageviews"></span>
+        <span class="price">
+          <span class="price-value"></span>
+          &nbsp / month
+        </span>
+      </div>
+
+      <input class="range"        type="range" min="1" max="5">
+
+      <div class="bill-switch">
+        <span>Monthly Billing</span>
+        <input hidden id="switch" name="switch" type="checkbox">
+        <label for="switch" class="switch"></label>
+        <span>
+          Yearly Billing &nbsp;
+          <span class="discount-tag">25% discount</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="inner-card">
+      <div class="subscribe">
+        <ul class="features"></ul>
+        <button class="btn"> Start my trial</button>
+      </div>
+    </div>
+
+  </div>
+  <!-- Simple, traffic-based pricing
+  Sign-up for our 30-day trial. No credit card required. 
+
+  Pageviews
+  $ /month
+
+  Monthly Billing
+  Yearly Billing 25% discount
+
+  Unlimited websites
+  100% data ownership
+  Email reports
+
+  Start my trial -->
+  <script src="index.js"></script>
+</body>
+<footer>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Teeho</a>.
+  </div>
+</footer>
+</html>
