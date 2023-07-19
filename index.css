@@ -14,6 +14,8 @@
     --cta-text: hsl(226, 100%, 87%);
     --slider-bg: hsl(174, 86%, 45%);
     --slider-bg2: hsl(224, 65%, 95%);
+
+    --max-card-width: 700px;
 }
 
 button, input {
@@ -34,6 +36,10 @@ header > img {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: -1;
+}
+
+header > * {
+    text-align: center;
 }
 
 h1 {
@@ -60,6 +66,7 @@ body {
 
 .card {
     max-width: 100%;
+    width: var(--max-card-width);
 
     display: flex;
     flex-direction: column;
@@ -71,7 +78,7 @@ body {
     background-color: white;
 
     width: 100%;
-    padding: 40px;
+    padding: 40px 30px;
     box-sizing: border-box;
 
     display: flex;
@@ -86,6 +93,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
 
     width: 100%;
 }
@@ -95,9 +104,18 @@ body {
     letter-spacing: 2px;
 }
 
-.price {
-    display: flex;
-    align-items: center;
+@media (max-width: 700px) {
+    .price {
+        order: 2;
+    }
+
+    .content > * {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+    }
 }
 
 .price-value {
@@ -110,8 +128,9 @@ body {
 /* slider */
 .range {
     max-width: 100%;
-    width: 700px;
+    width: var(--max-card-width);
     accent-color: var(--slider-bg);
+    order: 1;
 }
 
 
@@ -124,11 +143,18 @@ body {
     justify-content: center;
     align-items: center;
     gap: 12px;
+
+    font-size: 0.9em;
 }
 
 .bill-switch > span { flex: 1; display: flex; align-items: center; }
 .bill-switch span:first-child { justify-content: flex-end; }
 .bill-switch span:last-child { justify-content: flex-start; }
+
+.discount-text {
+    display: flex;
+    align-items: center;
+}
 
 .discount-tag {
     background-color: var(--discount-bg);
@@ -182,8 +208,23 @@ input[type=checkbox]:checked + .switch::after {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 
     width: 100%;
+}
+
+@media (max-width: 700px) {
+    .subscribe {
+        flex-direction: column;
+    }
+
+    .features {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        padding: 0;
+    }
 }
 
 .features {
@@ -204,6 +245,5 @@ input[type=checkbox]:checked + .switch::after {
 
 /* footer */
 footer {
-    position: absolute;
-    bottom: 0;
+    margin-top: 30px;
 }

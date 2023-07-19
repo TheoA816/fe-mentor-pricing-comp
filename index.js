@@ -1,4 +1,3 @@
-// features
 const features = [
     "Unlimited websites",
     "100% data ownership",
@@ -13,12 +12,15 @@ const ranges = {
     5: { pv: `1M`,    price: 36 },
 }
 
+const mobileMax = 700
+
 // elements
 const featuresList = document.querySelector('.features')
 const slider       = document.querySelector('.range')
 const toggle       = document.querySelector('#switch')
 const pageviews    = document.querySelector('.pageviews')
 const priceVal     = document.querySelector('.price-value')
+const tagContent   = document.querySelector('.discount-tag')
 
 // funcs
 const generateFeatures = (features) => {
@@ -47,8 +49,15 @@ const toggleYearly = (e) => {
     priceVal.textContent = `$${ yearly ? data.price / 4 * 3 : data.price }`
 }
 
+const changeTagContent = (e) => {
+    tagContent.textContent =  
+        (document.documentElement.clientWidth <= mobileMax)
+        ? `-25%` : `25% discount`
+}
+
 // main
 featuresList.append(generateFeatures(features))
 slider.addEventListener('change', changePrice)
 toggle.addEventListener('change', toggleYearly)
+window.addEventListener('resize', changeTagContent)
 slider.dispatchEvent(new Event('change'))
